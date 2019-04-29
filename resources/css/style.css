@@ -1,0 +1,155 @@
+/* Universal Styles */
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+
+/* div {
+  border: 1px solid red;
+} */
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+p  {
+  margin-top: 24px;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+main {
+  margin: 64px 0 0 0; 
+}
+
+section {
+  padding: 32px 24px;
+}
+
+.flex {
+  display: flex;
+}
+
+.mobile {
+  display: flex;
+}
+
+.desktop{
+  display: none;
+}
+
+.col-60 {
+  width: 60%;
+}  
+
+.col-40 {
+  width: 40%;
+}
+
+button {
+  margin: 24px 0 0 0;
+  padding: 8px 24px;
+  color: white;
+  background-color: hsla(0, 0%, 40%, 1.0);
+  font-size: 16px;
+}
+@media only screen and (min-width: 760px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop{
+    display: flex;
+  }  
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+}
+
+nav {
+  padding: 0 24px;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 0 0 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  margin: auto 0;
+}
+
+.logo-img img {
+  height: 32px;
+}
+
+.logo-text {
+  margin: 0 0 0 8px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.logo-text span:first-child {
+  font-weight: bold;
+}
+
+/* Hero */
+
+#hero {
+  background-color: hsla(0, 0%, 92%, 1.0);
+}
+
+.container-image img {
+  width: 100%;
+} 
+
+/* Practice */
+#practice {
+  background-color: hsla(0, 0%, 96%, 1.0);
+}
+
+/* Learn */
+#learn {
+  background-color: hsla(0, 0%, 92%, 1.0);
+}
+
+#learn .container {
+  height: 200px;
+}
+
+/* Thesis */
+#thesis {
+  background-color: hsla(0, 0%, 96%, 1.0);
+}
+
+#thesis .container {
+  height: 200px;
+}
+
+/* Footer */
