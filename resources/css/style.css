@@ -373,9 +373,10 @@ footer {
   border-top: 1px solid hsla(0, 0%, 85%, 1);
   color: hsla(0, 0%, 20%, 1);
 }
+
 footer .container{
   padding: 0 24px;
-  justify-content:space-between;
+  justify-content: center;
 }
 
 footer ul li {
@@ -389,6 +390,14 @@ footer a {
 footer a:hover {
   color: hsla(160, 95%, 30%, 1);
 }
+
+@media only screen and (min-width: 600px) {
+  footer .container{
+    padding: 0 24px;
+    justify-content: space-between;
+  }
+}
+
 /******** Information ********/
 
 .info {
