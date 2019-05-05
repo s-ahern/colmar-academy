@@ -1,68 +1,69 @@
-/* Universal Styles */
+/******** Universal ********/
 
 html {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
+  font-size: 14px;
+  line-height: 16px;
 }
-
 
 /* div {
   border: 1px solid red;
 } */
-
-h2 {
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 32px;
-}
-
-p  {
-  margin-top: 24px;
-  line-height: 1.5;
-}
-
-.container {
-  max-width: 1040px;
-  margin: 0 auto;
-}
 
 main {
   margin: 64px 0 0 0; 
 }
 
 section {
-  padding: 32px 24px;
+  padding: 32px 16px; 
 }
 
-.flex {
-  display: flex;
+.container {
+  display: block;
+  flex-wrap: wrap;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
-.mobile {
-  display: flex;
+.grid {
+  display: grid;
+}
+
+.container-image img, .container-video video {
+  width: 100%;
+} 
+
+.col-60, .col-40 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .section {
+    padding: 64px 24px; /* I think the increased padding between sections improves the appearance */
+  }
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .col-60 {
+    width: 60%;
+  }  
+
+  .col-40 {
+    width: 40%;
+    margin: 0 0 0 24px;
+  }
 }
 
 .desktop{
   display: none;
 }
 
-.col-60 {
-  width: 60%;
-}  
-
-.col-40 {
-  width: 40%;
+.mobile {
+  display: flex;
 }
 
-button {
-  margin: 24px 0 0 0;
-  padding: 8px 24px;
-  color: white;
-  background-color: hsla(0, 0%, 40%, 1.0);
-  font-size: 16px;
-}
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 800px) {
   .mobile {
     display: none;
   }
@@ -72,27 +73,81 @@ button {
   }  
 }
 
-/* Header */
+.flex {
+  display: flex;
+}
+
+/******** Type ********/
+
+h2 {
+  display: block;
+  margin: 0 0 24px 0;
+  color: hsla(0, 0%, 20%, 1.0);
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+#learn h2, #thesis h2 {
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+h4 {
+  display: block;
+  color: hsla(0, 0%, 20%, 1.0);
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+h5 {
+  display: block;
+  margin: 8px 0;
+  color: hsla(0, 0%, 70%, 1.0);
+  text-transform: uppercase;
+}
+
+p  {
+  color: hsla(0, 0%, 40%, 1.0);
+  line-height: 1.5;
+}  
+
+button {
+  margin: 24px 0 0 0;
+  padding: 8px 32px;
+  border-radius: 100px;
+  color: white;
+  background-color: hsla(0, 0%, 40%, 1.0);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button i{
+  margin: 0 0 0 16px;
+}
+
+/******** Header ********/
+
 header {
   position: fixed;
+  z-index: 100;
   width: 100%;
   top: 0;
   background-color: white;
+  color: hsla(0, 0%, 20%, 1.0);
 }
 
 nav {
-  padding: 0 24px;
   height: 64px;
+  padding: 0 24px;
   align-items: center;
   justify-content: space-between;
 }
 
-nav ul {
-  display: flex;
-}
-
-nav ul li {
-  margin: 0 0 0 16px;
+nav.mobile ul {
+  width: 100%;
+  justify-content: space-between;
 }
 
 .logo {
@@ -119,37 +174,260 @@ nav ul li {
   font-weight: bold;
 }
 
-/* Hero */
-
-#hero {
-  background-color: hsla(0, 0%, 92%, 1.0);
+@media only screen and (min-width: 800px) {
+  nav ul li {
+    margin: 0 0 0 16px;
+  }
 }
 
-.container-image img {
-  width: 100%;
-} 
+
+/******** Hero ********/
+#hero {
+  background-color: hsla(0, 0%, 90%, 1.0);
+  text-align: center;
+}
+
+#hero .grid {
+  grid-template-columns: 1fr;
+  grid-gap: 32px;
+  grid-column-start: 1;
+}
+
+@media only screen and (min-width: 800px) {
+  #hero {
+    text-align: left;
+  }
+  #hero .grid {
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 32px;
+  }
+}
 
 /* Practice */
 #practice {
-  background-color: hsla(0, 0%, 96%, 1.0);
+  background-color: hsla(0, 0%, 95%, 1.0);
 }
 
-/* Learn */
-#learn {
-  background-color: hsla(0, 0%, 92%, 1.0);
+#practice .container-image {
+  margin: 0 0 32px;
 }
 
-#learn .container {
-  height: 200px;
+.quote p {
+  margin-top: 16px;
+  color: hsla(0, 0%, 10%, 1.0);
 }
 
-/* Thesis */
-#thesis {
-  background-color: hsla(0, 0%, 96%, 1.0);
+#practice .col-60 {
+  flex-direction: column;
 }
 
-#thesis .container {
-  height: 200px;
+
+/******** Learn ********/
+section#learn {
+  background-color: hsla(0, 0%, 90%, 1.0);
 }
 
-/* Footer */
+@media only screen and (min-width: 900px) {
+  section#learn {
+    padding: 64px 72px;
+  }
+}
+
+/******** Thesis ********/
+
+section#thesis {
+  background-color: hsla(0, 0%, 95%, 1.0);
+}
+
+#thesis .container-video {
+  margin: 0 0 32px;
+}
+
+#thesis .col-40 {
+  flex-direction: column;
+}
+
+/******** Footer ********/
+
+footer {
+  padding: 24px 0 24px;
+  background-color: hsla(0, 0%, 95%, 1.0);
+  border-top: 1px solid hsla(0, 0%, 85%, 1.0);
+}
+footer .container{
+  padding: 0 24px;
+  justify-content: center;
+}
+
+footer ul li {
+  margin: 0 0 0 16px;
+}
+
+footer .container{
+  padding: 0 24px;
+  justify-content:space-between;
+}
+
+/******** Articles ********/
+
+.article {
+  flex-direction: column;
+}
+
+.article:nth-child(1n+2) {
+  border-top: 1px solid hsla(0, 0%, 85%, 1.0);
+}
+
+.article:hover {
+  background-color: hsla(0, 0%, 85%, 1.0);
+}
+
+.article h4 {
+  margin: 0 0 8px 0;
+}
+
+.article a {
+  color: blue;
+  line-height: 1.5;
+}
+
+.article img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.article .container-text {
+  max-width: 100%;
+  margin: 64px 0 64px 16px;
+}
+
+@media only screen and (min-width: 800px) { 
+  .article {
+    flex-direction: initial;
+    align-items: center;
+  }
+  .article img {
+    width: 35%;
+    height: auto;
+    margin: 16px 16px;
+  }
+  .article .container-text {
+    width: 65%;
+    margin: 16px 16px 16px 0;
+  }
+}
+
+/******** Courses ********/
+
+#courses {
+  justify-content: center;
+  width: 100%;
+}
+
+#courses.grid {
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  grid-column-start: 1;
+}
+
+.course {
+  position: relative;
+  flex-direction: column;
+  z-index: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+.course::after {
+  content: "";
+  position: absolute;
+  z-index: -200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.course:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+.course:hover::after {
+    opacity: 1;
+}
+
+.course img {
+  width: 100%;
+  height: auto;
+}
+
+.course .container-text {
+  padding: 24px 16px;
+}
+
+.course img, .course h5, .course p{
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .course img {
+    width: 100%;
+    height: auto;
+  }
+  .course img, .course h5, .course p{
+    display: flex;
+  }
+  #courses.grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #courses.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 32px;
+  }
+}
+
+button {
+  position: relative;
+  flex-direction: column;
+  z-index: 0;
+  background-color: blue;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  z-index: -200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.1, 1.1);
+  background-color: green;
+}
+
+button:hover:after {
+  opacity: 1;
+}

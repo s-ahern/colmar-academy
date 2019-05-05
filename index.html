@@ -3,6 +3,7 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="./resources/css/reset.css">
     <link rel="stylesheet" href="./resources/css/style.css">
     <meta charset="UTF-8">
@@ -11,6 +12,14 @@
     <!-- Header -->
     <header>
       <div class="container"> 
+        <nav class="mobile">
+          <ul class="flex">
+            <li><a class="logo" href="#"><img src="./resources/images/ic-logo.svg"></a></li>
+            <li><a href="#"><img src="./resources/images/ic-on-campus.svg"></a></li>
+            <li><a href="#"><img src="./resources/images/ic-online.svg"></a></li>
+            <li><a href="#"><img src="./resources/images/ic-login.svg"></a></li>
+          </ul>
+        </nav>
         <nav class="desktop">
           <a class="logo" href="#">
             <div class="logo-img">
@@ -20,19 +29,7 @@
               <span>Colmar</span><span>Academy</span>
             </div>
           </a>
-          <ul>
-            <li><a href="#">On Campus</a></li>
-            <li><a href="#">Online</a></li>
-            <li><a href="#">For Companies</a></li>
-            <li><a href="#">Sign In</a></li>
-          </ul>
-        </nav>
-        <nav class="mobile">
-          <a class="logo" href="#">
-            <img src="./resources/images/ic-logo.svg">
-          </a>
-          <ul>
-            <li><a href="#">Mobile On Campus</a></li>
+          <ul class="flex">
             <li><a href="#">Online</a></li>
             <li><a href="#">For Companies</a></li>
             <li><a href="#">Sign In</a></li>
@@ -44,44 +41,158 @@
     <main>
       <!-- Hero -->
       <section id="hero">
-        <div class="container flex">
-          <div class="col-60">
-            <div class="container-image">
-              <img class="flex" src="./resources/images/banner.jpg">
-            </div>
+        <div class="container grid">
+          <div class="container-image">
+            <img class="flex" src="./resources/images/banner.jpg">
           </div>
-          <div class="col-40">
-            <h2>Learn something new everyday.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Start Here</button>
+          <div class="container">
+            <h2>Learn something new everyday</h2>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+            <button role="button">Start Here<i class="fas fa-angle-right"></i></button>
           </div>
         </div>
       </section>
       <!-- Practice -->
       <section id="practice">
         <div class="container flex">
-          <div class="col-60">
+          <div class="col-60 desktop">
             <div class="container-image">
               <img class="flex" src="./resources/images/information-main.jpg">
             </div>
+            <h2>It doesn't hurt to keep practicing</h2>
+            <p>Curabitur vitae libero in ipsu portitor consequat. Aliquam et commodo lectus,nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligular.</p>
+            <span class="quote"><p>—Emanuel, Sr. Strategist at Hiring.com</p></span>
           </div>
-          <div class="col-40">
+          <div id="articles" class="col-40">
+            <div id="orientation" class="article flex">
+              <img class="mobile" src="./resources/images/information-orientation-mobile.jpg">
+              <img class="desktop" src="./resources/images/information-orientation.jpg">
+              <div class="container-text">
+                <h4>Orientation Date</h4>
+                <p>Tue 10/11 &amp; Wed 10/12: 8am-3pm</p>
+                <a href="#">Read more</a>
+              </div>
+            </div>
+            <div id="our-campus" class="article flex">
+              <img class="mobile" src="./resources/images/information-campus-mobile.jpg">
+              <img class="desktop" src="./resources/images/information-campus.jpg">
+              <div class="container-text">
+                <h4>Our campus</h4>
+                <p>Find which campus is close by you</p>
+                <a href="#">Read more</a>
+              </div>
+            </div>
+            <div id="guest-lecture" class="article flex">
+              <img class="mobile" src="./resources/images/information-guest-lecture-mobile.jpg">
+              <img class="desktop" src="./resources/images/information-guest-lecture.jpg">
+              <div class="container-text">
+                <h4>Our guest lecture</h4>
+                <p>Join a keynote with Oliver Sack about music in medical treament</p>
+                <a href="#">Read more</a>
+              </div>
+            </div>           
           </div>
         </div>
       </section>
       <!-- Learn -->
       <section id="learn">
         <div class="container">
+          <h2>Start learning</h2>
+          <div id="courses" class="container grid">
+            <div id="software-engineering" class="course">
+              <img src="./resources/images/course-software.jpg">
+              <div class="container-text">
+                <h4>Software Engineering</h4>
+                <h5>Courses</h5>
+                <p>Web Development, Mobile Development, iOT, APIs</p>
+              </div>
+            </div>
+            <div id="computer-art" class="course">
+              <img src="./resources/images/course-computer-art.jpg">
+              <div class="container-text">
+                <h4>Computer Art</h4>
+                <h5>Courses</h5>
+                <p>Imaging &amp; Design, Web Design, Motion Graphics &amp; Visual Effects, Computer Animation</p>
+              </div>
+            </div>
+            <div id="design" class="course">
+              <img src="./resources/images/course-design.jpg">
+              <div class="container-text">
+                <h4>Design</h4>
+                <h5>Courses</h5>
+                <p>User Experience Design, User Research, Visual Design</p>
+              </div>
+            </div>
+            <div id="data" class="course">
+              <img src="./resources/images/course-data.jpg">
+              <div class="container-text">
+                <h4>Data</h4>
+                <h5>Courses</h5>
+                <p>Data Science, Big Data, SQL, Data Visualization</p>
+              </div>
+            </div>
+            <div id="business" class="course">
+              <img src="./resources/images/course-business.jpg">
+              <div class="container-text">
+                <h4>Business</h4>
+                <h5>Courses</h5>
+                <p>Product Development, Business Development, Startup</p>
+              </div>
+            </div>
+            <div id="marketing" class="course">
+              <img src="./resources/images/course-marketing.jpg">
+              <div class="container-text">
+                <h4>Marketing</h4>
+                <h5>Courses</h5>
+                <p>Analytics, Content Marketing, Mobile Marketing</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- Thesis -->
       <section id="thesis">
         <div class="container">
+          <h2>Thesis Exhibit</h2>
+          <div class="container flex">
+            <div class="col-60">
+              <div class="container-video">
+                <video src="./resources/videos/thesis.mp4" controls>Video unsupported</video>
+              </div>
+              <h4>Reimagine urban</h4>
+              <p>Curabitur vitae libero in ipsu portitor consequat. Aliquam et commodo lectus,nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligular.</p>
+            </div>
+            <div class="col-40 desktop">
+              <div id="fisma" class="article flex">
+                <img src="./resources/images/thesis-fisma.jpg">
+                <div class="container-text">
+                  <h4>Fisma: Design &amp; Prototype</h4>
+                  <p>Designer showcase of new prototype product</p>
+                  <a href="#">Read more</a>
+                </div>
+              </div>
+              <div id="now-and-then" class="article flex">
+                <img src="./resources/images/thesis-now-and-then.jpg">
+                <div class="container-text">
+                  <h4>Fisma: Design &amp; Prototype</h4>
+                  <p>Designer showcase of new prototype product</p>
+                  <a href="#">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <!-- Footer -->
     <footer>
+      <div class="container flex">
+        <span>© 2019 Colmar Academy. All rights reserved.</span>
+        <ul class="desktop">
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>
